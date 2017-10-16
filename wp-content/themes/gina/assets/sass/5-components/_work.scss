@@ -1,0 +1,172 @@
+.c-work {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+
+  .o-layout-container {
+    padding: 0;
+  }
+
+  .grid {
+    // padding: $base-spacing-unit 0;
+    box-sizing: content-box;
+    @include breakpoint($break-tablet) {
+      // padding: $base-spacing-unit * 2 0;
+    }
+  }
+}
+
+.c-work__categories {
+  display: none;
+  padding: $base-spacing-unit;
+  text-align: right;
+  border-bottom: 1px solid $color-border;
+
+  @include breakpoint($break-tablet) {
+    display: block;
+  }
+
+  span {
+    margin-right: $base-spacing-unit;
+  }
+
+  button {
+    transition: background-color .2s ease-out;
+    color: $color-white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+  }
+}
+
+.c-work__single {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  a {
+    transition: transform .2s ease-out;
+    display: block;
+
+    @include breakpoint($break-tablet) {
+      padding: 0 20px;
+    }
+
+    @include hocus() {
+      transform: scale(1.02) translateY(-5px);
+    }
+  }
+
+
+
+  &.hover {
+    a {
+      // transform: scale(.98);
+    }
+    img {
+      transition: filter .4s ease-out;
+      filter: grayscale(100%);
+    }
+  }
+}
+
+.c-work__category {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $color-white;
+  padding: 5px 10px;
+  font-size: .8em;
+  font-weight: lighter;
+  color: $color-white;
+  z-index: 1;
+
+  @include breakpoint($break-tablet) {
+    right: 20px;
+  }
+}
+
+.c-work__image {
+
+  @include breakpoint($break-tablet) {
+    padding-left: 10%;
+    padding-bottom: 10%;
+  }
+
+  img {
+    filter: grayscale(0%);
+  }
+}
+
+.c-work__title {
+  position: relative;
+  padding: 10px;
+  border: 1px solid $color-border;
+
+  @include breakpoint($break-tablet) {
+    margin-top: -20%;
+    background-color: $color-white;
+    max-width: 75%;
+  }
+}
+
+.grid-sizer, .grid-item {
+  @include span(12 of 12);
+
+  @include breakpoint($break-mobile-land) {
+    @include span(6 of 12);
+  }
+
+  @include breakpoint($break-desktop) {
+    @include span(4 of 12);
+  }
+}
+
+
+// Categories
+.c-work__category--all {
+  background-color: $color-grey;
+}
+.c-work__category--green {
+  background-color: $color-green;
+}
+.c-work__category--blue {
+  background-color: $color-blue
+}
+.c-work__category--red {
+  background-color: $color-red
+}
+.c-work__category--purple {
+  background-color: $color-purple
+}
+.c-work__category--orange {
+  background-color: $color-orange
+}
+
+.c-work__categories {
+  .c-work__category--green {
+    @include hocus() {
+      background-color: $hover-green;
+    }
+  }
+  .c-work__category--blue {
+    @include hocus() {
+      background-color: $hover-blue;
+    }
+  }
+  .c-work__category--red {
+    @include hocus() {
+      background-color: $hover-red;
+    }
+  }
+  .c-work__category--purple {
+    @include hocus() {
+      background-color: $hover-purple;
+    }
+  }
+  .c-work__category--orange {
+    @include hocus() {
+      background-color: $hover-orange;
+    }
+  }
+}

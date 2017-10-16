@@ -1,0 +1,47 @@
+/*==================================
+=            TYPOGRAPHY            =
+==================================*/
+
+
+
+// Generate a font-size and baseline-compatible line-height.
+@mixin font-size($font-size) {
+ font-size: $font-size;
+ font-size: ($font-size / $base-font-size) * 1rem;
+};
+
+
+// Map keywords onto our numbered weights for convenience.
+@mixin font-weight($weight) {
+  @if ($weight==normal) {
+    font-weight: 400;
+  }
+  @elseif ($weight==bold) {
+    font-weight: 700;
+  }
+  @elseif ($weight==black) {
+    font-weight: 900;
+  }
+  @else {
+    @warn "#{$weight} is not a valid font-weight."
+  }
+};
+
+
+@mixin truncate($width: 100%) {
+  max-width: $width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }@else {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+    }
+}

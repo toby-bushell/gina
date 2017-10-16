@@ -1,0 +1,27 @@
+{% for acf in post.get_field('acf_field_page_builder') %}
+
+  {# Text block #}
+  {% if acf.acf_fc_layout == 'acf_layout_text_block' %}
+    {% include 'partials/text-block.twig' %}
+
+  {# Big content #}
+  {% elseif acf.acf_fc_layout == 'acf_layout_big_content_section' %}
+    {% include 'partials/content-big.twig' %}
+
+  {# Two column content #}
+  {% elseif acf.acf_fc_layout == 'acf_layout_two_content_section' %}
+    {% include 'partials/content-two.twig' %}
+
+  {# Ccontent #}
+  {% elseif acf.acf_fc_layout == 'acf_layout_content' %}
+    {% include 'partials/content-text.twig' %}
+
+  {# CTA #}
+  {% elseif acf.acf_fc_layout == 'acf_layout_CTA' %}
+    {% include 'partials/cta.twig' %}
+
+    {# and so on... #}
+
+    {% endif %}
+
+{% endfor %}

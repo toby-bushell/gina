@@ -1,0 +1,22 @@
+.o-social-icons {
+  overflow: hidden;
+  text-align: right;
+}
+
+.o-social-icons__single {
+  width: 40px;
+  height: 40px;
+  margin-left: $base-spacing-unit;
+  display: inline-block;
+
+  @include hocus() {
+    svg {
+      fill: $color-black;
+    }
+  }
+
+  svg {
+    fill: $color-blue;
+  }
+}
+

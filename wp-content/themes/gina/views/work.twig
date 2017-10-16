@@ -1,0 +1,53 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+  {# Hero module #}
+  {% include 'partials/hero.twig' %}
+  <div class="c-work">
+    <div class="button-group filter-button-group c-work__categories">
+      <div class="o-layout-container">
+        <span>Filter:</span>
+        <button class="c-work__category--all" data-filter="*">show all</button>
+
+        {% for category in cats %}
+
+          <button class="c-work__category--{{category.acf_option_cat_color}}" data-filter=".{{category.slug}}">{{category.name}}</button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="o-layout-container--desktop">
+      <div class="grid">
+        <div class="grid-sizer"></div>
+        {% for post in post.get_field('acf_field_work_selection') %}
+
+            {% set category = fn('get_category', post._yoast_wpseo_primary_category) %}
+            {% set category = category.slug|length == 0 ? fn('get_the_category', post.id)[0] : category %}
+
+            {% set catColour = '' %}
+
+            {% for cat in cats %}
+
+              {% if cat.slug == category.slug  %}
+                {% set catColour = cat.acf_option_cat_color %}
+              {% endif %}
+            {% endfor %}
+
+            <div class="c-work__single grid-item {{category.slug}}">
+              <a href="{{post.link}}">
+                <div class="c-work__category c-work__category--{{catColour}}">{{category.name}}</div>
+                <div class="c-work__image">
+                  <img src="{{ TimberImage( post.get_field('acf_field_hero_image') ).src('large') }}" alt="{{ post.get_field('acf_field_hero_image').alt }}" />
+                </div>
+                <h3 class="c-work__title">{{post.acf_field_hero_title}}</h3>
+              </a>
+            </div>
+        {% endfor %}
+
+        </div>
+    </div>
+  </div>
+{% endblock %}
+

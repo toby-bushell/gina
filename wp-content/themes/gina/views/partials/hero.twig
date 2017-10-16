@@ -1,0 +1,30 @@
+{% set backgroundImage = post.get_field('acf_field_hero_image') %}
+{% set heroTitle       = post.get_field('acf_field_hero_title') %}
+{% set heroContent     = post.get_field('acf_field_hero_content') %}
+
+{% if backgroundImage %}
+  <div class="c-hero" style="background-image: url({{ TimberImage(backgroundImage).src('hero') }})">
+{% else %}
+    <div class="c-hero c-hero--no-image">
+{% endif %}
+  <div class="o-overlay o-overlay--light"></div>
+  <div class="o-layout-container o-layout-container--content">
+
+    <div class="c-hero-content">
+      <h1 class="c-hero-content__title">{{heroTitle}}</h1>
+
+      {% if backgroundImage %}
+        <h2 class="c-hero-content__text">{{heroContent}}</h2>
+      {% else %}
+        <p class="c-hero-content__text">{{heroContent}}</p>
+      {% endif %}
+    </div>
+
+    {% if backgroundImage == null %}
+      {% include 'partials/social-icons.twig' %}
+    {% endif %}
+
+
+  </div>
+</div>
+

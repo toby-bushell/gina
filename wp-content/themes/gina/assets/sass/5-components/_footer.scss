@@ -1,0 +1,22 @@
+.c-footer {
+  width: 100%;
+  padding: $base-spacing-unit 0;
+  background-color: $color-black;
+  float: left;
+
+  .o-social-icons__single {
+    width: 30px;
+    height: 30px;
+
+    @include hocus() {
+      svg {
+        fill: $color-blue;
+      }
+    }
+
+    svg {
+      fill: $color-white;
+    }
+  }
+}
+

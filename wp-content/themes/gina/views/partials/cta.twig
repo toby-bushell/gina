@@ -1,0 +1,26 @@
+{# <div class="c-content-two" style="background-image:url({{TimberImage(acf.acf_field_two_left_image).src('large')}})"> #}
+{% set ctaType = acf.acf_option_CTA_type ? 'download' : 'url' %}
+
+<div class="c-cta">
+  <div class="o-layout-container o-layout-container--content">
+
+    <div class="c-cta__wrapper">
+      <div class="c-cta__content">
+        <h3>{{acf.acf_field_cta_content}}</h3>
+      </div>
+      <div class="c-cta__button">
+
+        {% if ctaType == 'download' %}
+          {% set downloadLink = acf.acf_field_cta_file.url %}
+          <a href="{{downloadLink}}" class="c-btn" target='_blank'>{{acf.acf_field_cta_button_text}}</a>
+        {% else %}
+          {% set ctaURL = acf.acf_field_cta_url %}
+          <div class="c-cta__copy">
+            <button class="c-btn c-btn--copy" data-clipboard-text="{{ctaURL}}">{{acf.acf_field_cta_button_text}}</button>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>

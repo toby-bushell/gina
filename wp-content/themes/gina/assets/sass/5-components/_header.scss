@@ -1,0 +1,24 @@
+.c-site-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.c-site-header.no-hero {
+  .o-hamburger:not(.is-active) {
+
+
+    .o-hamburger-inner,
+    .o-hamburger-inner:before,
+    .o-hamburger-inner:after {
+      background-color: $color-black;
+    }
+  }
+}
+
+.c-site-header__logo {
+  @extend h2;
+  color: $color-white;
+  margin-bottom: 0;
+}

@@ -1,0 +1,14 @@
+{
+  "esversion": 6,
+  "asi" : true,
+  "undef": true,
+  "unused": true,
+  "globals": {
+    "$": false,
+    "jQuery" : false,
+    "window" : false,
+    "app" : false,
+    "Vue" : false
+   },
+   "devel": true
+}

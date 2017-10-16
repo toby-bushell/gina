@@ -1,0 +1,34 @@
+/*===============================
+=            COLOURS            =
+===============================*/
+
+
+// Set up a colour palette which allows us to theme the entire project from one
+// location.
+
+$color-black                              : #000000;
+$color-off-black                          : #1E1E1E;
+$color-grey                               : #9b9b9b;
+$color-white                              : #fff;
+
+$color-blue                               : #7eaccf;
+$color-green                              : #80db6b;
+$color-red                                : #d0011b;
+$color-purple                             : #9084dd;
+$color-orange                             : #ffac70;
+
+$hover-blue                               : darken($color-blue,15%);
+$hover-green                              : darken($color-green,15%);
+$hover-red                                : darken($color-red,15%);
+$hover-purple                             : darken($color-purple,15%);
+$hover-orange                             : darken($color-orange,15%);
+
+
+// Reassign literal variables to meaningful ones.
+
+$color-page-background                    : #FFFFFF;
+
+$color-border                             : rgba(0, 0, 0, .2);
+
+// $color-links                           :
+// $color-links-hover                     : darken($, 10%);

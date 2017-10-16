@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  {# The following completely depends on the flexibility of the theme. #}
+
+  {# Hero module #}
+  {% include 'partials/hero.twig' %}
+
+  {# wp content #}
+   {#{% if post.post_content %}
+    {% include 'partials/post-content.twig' %}
+  {% endif %}#}
+
+
+  {#
+    Loop through to find Individual Modules, using ACF conditional format field
+    this creates a page builder like use of ACF where the order can be changed
+    within the wordpress admin
+  #}
+  {% include 'acf-page-builder.twig' %}
+
+
+{% endblock %}
+

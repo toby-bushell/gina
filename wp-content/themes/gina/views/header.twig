@@ -1,0 +1,29 @@
+{% set headerType = post.get_field('acf_field_hero_image') ? 'has-hero' : 'no-hero' %}
+
+<header class="c-site-header {{headerType}}">
+  <div class="o-layout-container c-site-header__container">
+    	<div class="c-site-header__logo" role="banner">
+          <a href="{{site.url}}" rel="home">
+            {# <img src="{{theme.link}}/assets/images/logo.svg" alt="" /> #}
+          </a>
+      </div>
+
+    <div class="c-site-header__right">
+
+      {# main nav #}
+      <nav class="c-nav-primary" role="navigation">
+        {% include "menu.twig" with {'menu': menu.get_items} %}
+      </nav>
+
+
+      {# hamburger #}
+      <button class="o-hamburger o-hamburger--spin js-hamburger" type="button">
+        <span class="o-hamburger-box">
+          <span class="o-hamburger-inner"></span>
+        </span>
+      </button>
+
+    </div>
+  </div>
+
+</header>

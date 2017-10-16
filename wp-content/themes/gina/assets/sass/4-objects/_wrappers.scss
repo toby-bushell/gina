@@ -1,0 +1,35 @@
+/*================================
+=            WRAPPERS            =
+================================*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.o-site-container {
+  // Sticky Footer
+  flex: 1 0 auto;
+}
+
+
+// Susy grid container
+.o-layout-container {
+  padding: 0 $base-spacing-unit;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.o-layout-container--desktop {
+  @include breakpoint($break-tablet) {
+    padding: 0 $base-spacing-unit;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+// Susy grid container
+.o-layout-container--content {
+  max-width: 900px;
+  margin: 0 auto;
+}

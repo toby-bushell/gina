@@ -1,0 +1,96 @@
+.c-content {
+  float: left;
+  width: 100%;
+  padding: $base-spacing-unit * 2 0;
+
+  @include breakpoint($break-tablet) {
+    padding: $base-spacing-unit * 3 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.c-content-two {
+  @include breakpoint($break-desktop) {
+    padding: $base-spacing-unit * 4 0;
+  }
+
+  .o-layout-container {
+    position: relative;
+  }
+}
+
+.c-content + .c-content {
+  padding-top: 0;
+}
+
+.c-content-two__image {
+  margin-bottom: $base-spacing-unit;
+
+  @include breakpoint($break-desktop) {
+    width: 30%;
+    position: absolute;
+    left: $base-spacing-unit;
+  }
+}
+
+.c-content-two__text {
+  @include breakpoint($break-desktop) {
+    width: 55%;
+    float: right;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.c-content-big {
+  padding: $base-spacing-unit * 2 0 $base-spacing-unit * 3 0;
+  float: left;
+  width: 100%;
+  position: relative;
+
+  @include breakpoint($break-desktop) {
+    padding: $base-spacing-unit * 4 0
+  }
+}
+
+.c-content-big__image {
+  margin-bottom: $base-spacing-unit;
+}
+
+.c-content-big__text {
+  padding: $base-spacing-unit;
+  background-color: $color-white;
+  margin-top: -80px;
+  position: relative;
+  max-width: 90%;
+  float: right;
+  border: 1px solid $color-border;
+
+  @include breakpoint($break-tablet) {
+    margin-top: 0;
+    position: absolute;
+    bottom: 0;
+    max-width: 55%;
+    right: 10%;
+  }
+
+  @include breakpoint($break-desktop) {
+    width: 55%;
+    max-width: 450px;
+    padding: $base-spacing-unit * 2;
+    margin-right: 10%;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.js-move {
+  transition: transform .1s ease-out;
+}

@@ -1,0 +1,28 @@
+/*============================
+=            PAGE            =
+============================*/
+
+/**
+ * Page-level styling (e.g. HTML and BODY elements).
+ */
+
+html {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  background-color: $color-page-background;
+  color: $color-off-black;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+p {
+  line-height: 1.5em;
+  color: $color-grey;
+}
+
+em {
+  font-weight: bold;
+}
